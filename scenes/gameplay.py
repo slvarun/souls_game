@@ -1,8 +1,10 @@
 from entities.player.player import Player
 from entities.player.player_classes import HERO_CLASSES
 from pyglet.window import key, mouse
+
+
 class GamePlayScene:
-    def __init__(self, window, class_index=0):
+    def __init__(self, window, class_index):
         self.window = window
         self.keys_held = {}
         self.player = Player(HERO_CLASSES[class_index])

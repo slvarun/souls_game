@@ -84,8 +84,8 @@ HERO_CLASSES = {
         "Mystic Barrier"
       ]
     },
-    "Necromancer":    {
-      "name": "Necromancer",
+    "necromancer":    {
+      "name": "necromancer",
       "flavor": "A conduit of death whose summons and curses bend the living to their will.",
       "stats": {
         "vigor": 10,

@@ -3,7 +3,7 @@ from pyglet.window import key, mouse
 from scenes.menu import MainMenuScene
 
 class GameWindow(pyglet.window.Window):
-    def __init__(self, width=1280, height=720, title="My Pyglet Game"):
+    def __init__(self, width=1280, height=720, title="My souls Game"):
         super().__init__(width, height, title)
         self.set_location(100, 100)
         self.fps_display = pyglet.window.FPSDisplay(self)
