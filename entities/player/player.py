@@ -1,8 +1,8 @@
 import pyglet
-from entities.player.animations_loader import load_all_animations
+from utils.animations_loader import load_all_animations
 
 class Player:
-    def __init__(self, hero_class, x=100, y=100):
+    def __init__(self, hero_class, window):
         # Basic attributes
         self.name = hero_class["name"]
         self.flavor = hero_class["flavor"]
@@ -11,8 +11,8 @@ class Player:
         self.abilities = hero_class["abilities"]
 
         # Position and movement
-        self.x = x
-        self.y = y
+        self.x = window.width // 2
+        self.y = window.height // 2
         self.dx = 0
         self.dy = 0
         self.speed = 200.0
@@ -24,9 +24,11 @@ class Player:
         self.animations = load_all_animations(self.name)
         self.current_animation = f'{self.name.lower()} idle'  # e.g., 'necromancer idle'
         self.sprite = self.animations[self.current_animation]
-        self.sprite.x = self.x
-        self.sprite.y = self.y
+        self.sprite.x = window.width  // 2
+        self.sprite.y = window.height // 2
         self.sprite.scale_x = self.scale_x
+
+        self.sprite.draw()
 
     def update(self, dt, keys_held):
         # Reset movement
@@ -68,8 +70,12 @@ class Player:
         self.sprite.x = self.x
         self.sprite.y = self.y
 
+    # def attack(direction, ):
+
     def draw(self):
         self.sprite.draw()
+        
+
 
     def use_ability(self, index):
         if 0 <= index < len(self.abilities):
