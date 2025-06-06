@@ -3,9 +3,9 @@ from pyglet.window import key, mouse
 from scenes.menu import MainMenuScene
 
 class GameWindow(pyglet.window.Window):
-    def __init__(self, width=1280, height=720, title="My souls Game"):
+    def __init__(self, width=1280, height=960, title="My souls Game"):
         super().__init__(width, height, title)
-        self.set_location(100, 100)
+        self.set_location(10, 20)
         self.fps_display = pyglet.window.FPSDisplay(self)
         self.current_scene = MainMenuScene(self)
 
@@ -25,6 +25,8 @@ class GameWindow(pyglet.window.Window):
 
     def on_mouse_press(self, x, y, button, modifiers):
         self.current_scene.on_mouse_press(x, y, button, modifiers)
+    def on_mouse_release(self, x, y, button, modifiers):
+        self.current_scene.on_mouse_release(x, y, button, modifiers)
 
     def on_mouse_motion(self, x, y, dx, dy):
         self.current_scene.on_mouse_motion(x, y, dx, dy)

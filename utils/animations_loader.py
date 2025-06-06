@@ -4,7 +4,7 @@ import os
 
 
 
-def load_animation(character, animation_name, scale = 0.2):
+def load_animation(character, animation_name, scale = 0.125):
     animation_path = f"assets/{character}/gifs/{animation_name}.gif"
     if not os.path.exists(animation_path):
         raise FileNotFoundError(f"Animation file not found: {animation_path}")

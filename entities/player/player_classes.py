@@ -7,7 +7,7 @@ HERO_CLASSES = {
         "endurance": 12,
         "stamina": 18,
         "poise": 5,
-	    "strength" : 10,
+	      "strength" : 10,
         "luck": 13
       },
       "equipment": {
@@ -18,7 +18,8 @@ HERO_CLASSES = {
       "abilities": [
         "Rain of Arrows",
         "Shadowstep",
-        "Piercing Shot"
+        "Piercing Shot",
+        "Hawk Eye"
       ]
     },
     "Knight":{

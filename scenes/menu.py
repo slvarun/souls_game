@@ -1,5 +1,5 @@
 from pyglet.window import key
-from scenes.gameplay import GamePlayScene
+from scenes.demo import GamePlayScene
 import pyglet
 from entities.player.player_classes import HERO_CLASSES
 
@@ -72,9 +72,8 @@ class MainMenuScene:
         elif symbol == key.DOWN:
             self.selected_index = (self.selected_index + 1) % len(self.class_options)
         elif symbol == key.ENTER:
-            print(self.selected_index)
-            chosen = self.class_options[self.selected_index].lower()
-            self.window.current_scene = GamePlayScene(self.window, class_index=chosen)
+            hero_class = HERO_CLASSES[self.class_options[self.selected_index]]
+            self.window.current_scene = GamePlayScene(self.window, class_index=hero_class["name"])
 
     # Unused events can remain empty or removed
     def on_key_release(self, symbol, modifiers):
